@@ -6,69 +6,82 @@
 <title>Daily Check-In | 每日沟通</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Source+Sans+3:wght@300;400;600&family=Noto+Serif+SC:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#C9A84C;--gold-light:#E8D5A3;--deep:#1A1A2E;--soft:#F7F3ED;--green:#4CAF82;--red:#E07070;--mid:#888;--card:#fff}
+:root{--gold:#C9A84C;--gold-light:#E8D5A3;--deep:#1A1A2E;--soft:#F7F3ED;--green:#4CAF82;--red:#E07070;--mid:#888;--card:#fff;--blue:#7BA7D4}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--soft);font-family:'Source Sans 3',sans-serif;color:var(--deep);min-height:100vh}
 header{background:var(--deep);padding:28px 24px 20px;text-align:center}
 header::after{content:'';display:block;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-top:18px}
-.hen{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.6rem;letter-spacing:1px}
-.hzh{font-family:'Noto Serif SC',serif;color:var(--gold-light);font-size:1.1rem;margin-top:4px;opacity:.85}
-.date-badge{display:inline-block;margin-top:10px;background:rgba(201,168,76,.15);border:1px solid var(--gold);color:var(--gold-light);padding:4px 14px;border-radius:20px;font-size:.8rem;letter-spacing:1px}
+.hen{font-family:'Playfair Display',serif;color:var(--gold);font-size:1.5rem;letter-spacing:1px}
+.hzh{font-family:'Noto Serif SC',serif;color:var(--gold-light);font-size:1rem;margin-top:4px;opacity:.85}
+.date-badge{display:inline-block;margin-top:10px;background:rgba(201,168,76,.15);border:1px solid var(--gold);color:var(--gold-light);padding:4px 14px;border-radius:20px;font-size:.8rem}
 .container{max-width:900px;margin:0 auto;padding:24px 16px 60px}
-.section{background:var(--card);border-radius:12px;padding:22px 20px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.06);border-left:4px solid var(--gold);animation:fadeUp .4s ease both}
-@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-.section:nth-child(1){animation-delay:.05s}.section:nth-child(2){animation-delay:.1s}.section:nth-child(3){animation-delay:.15s}.section:nth-child(4){animation-delay:.2s}.section:nth-child(5){animation-delay:.25s}
-.slabel{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px;gap:12px}
-.len{font-family:'Playfair Display',serif;font-size:1rem;color:var(--deep);font-weight:600}
-.lzh{font-family:'Noto Serif SC',serif;font-size:.9rem;color:var(--mid);text-align:right}
-.tgroup{display:flex;gap:10px;flex-wrap:wrap}
-.tbtn{padding:8px 18px;border-radius:30px;border:2px solid var(--gold-light);background:transparent;color:var(--mid);cursor:pointer;font-size:.85rem;transition:all .2s;font-family:'Source Sans 3',sans-serif}
-.tbtn .zh{font-family:'Noto Serif SC',serif;font-size:.8rem;display:block;color:inherit;opacity:.75}
+.section{background:var(--card);border-radius:12px;padding:20px 18px;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,.06);border-left:4px solid var(--gold);animation:fadeUp .4s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.s1{animation-delay:.05s}.s2{animation-delay:.1s}.s3{animation-delay:.15s}.s4{animation-delay:.2s}.s5{animation-delay:.25s}.s6{animation-delay:.28s}.s7{animation-delay:.3s}.s8{animation-delay:.32s}
+.slabel{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:10px}
+.len{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--deep);font-weight:600}
+.lzh{font-family:'Noto Serif SC',serif;font-size:.85rem;color:var(--mid);text-align:right}
+.tgroup{display:flex;gap:7px;flex-wrap:wrap}
+.tbtn{padding:7px 13px;border-radius:30px;border:2px solid var(--gold-light);background:transparent;color:var(--mid);cursor:pointer;font-size:.8rem;transition:all .2s;font-family:'Source Sans 3',sans-serif;text-align:center;line-height:1.3}
+.tbtn .zh{font-family:'Noto Serif SC',serif;font-size:.73rem;display:block;color:inherit;opacity:.75}
 .tbtn:hover{border-color:var(--gold);color:var(--deep)}
-.tbtn.ay{background:var(--green);border-color:var(--green);color:#fff}
-.tbtn.an{background:var(--red);border-color:var(--red);color:#fff}
-.tbtn.am{background:var(--gold);border-color:var(--gold);color:#fff}
-.star-row{display:flex;gap:8px;align-items:center}
-.star{font-size:1.8rem;cursor:pointer;transition:transform .15s;color:#ddd;line-height:1}
+.ay{background:var(--green)!important;border-color:var(--green)!important;color:#fff!important}
+.an{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important}
+.am{background:var(--gold)!important;border-color:var(--gold)!important;color:#fff!important}
+.ab{background:var(--blue)!important;border-color:var(--blue)!important;color:#fff!important}
+.ak{background:#444!important;border-color:#444!important;color:#fff!important}
+.star-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.star{font-size:1.7rem;cursor:pointer;transition:transform .15s;color:#ddd;line-height:1}
 .star:hover,.star.lit{color:var(--gold);transform:scale(1.15)}
-.slb{margin-left:10px;font-size:.85rem;color:var(--mid)}
+.slb{margin-left:8px;font-size:.85rem;color:var(--mid)}
 .slb .zh{font-family:'Noto Serif SC',serif;font-size:.75rem;display:block}
-.bilinput{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.iblock label{font-size:.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--mid);display:block;margin-bottom:6px}
-.iblock label .zh{font-family:'Noto Serif SC',serif;text-transform:none;letter-spacing:0;font-size:.8rem}
-textarea{width:100%;border:1.5px solid #e0dbd0;border-radius:8px;padding:10px 12px;font-family:'Source Sans 3',sans-serif;font-size:.9rem;color:var(--deep);resize:vertical;min-height:80px;background:var(--soft);transition:border-color .2s}
-textarea.zhi{font-family:'Noto Serif SC',serif}
+.notes-wrap{display:flex;flex-direction:column;gap:10px}
+.iblock label{font-size:.73rem;text-transform:uppercase;letter-spacing:1px;color:var(--mid);display:block;margin-bottom:5px}
+.iblock label .zh{font-family:'Noto Serif SC',serif;text-transform:none;letter-spacing:0;font-size:.78rem}
+textarea{width:100%;border:1.5px solid #e0dbd0;border-radius:8px;padding:9px 11px;font-size:.88rem;color:var(--deep);resize:vertical;min-height:65px;background:var(--soft);transition:border-color .2s}
+textarea.eng{font-family:'Source Sans 3',sans-serif}
+textarea.zhi{font-family:'Noto Serif SC',serif;background:#f0f7ff}
 textarea:focus{outline:none;border-color:var(--gold)}
-.psec{background:var(--deep);border-radius:12px;padding:22px 20px;margin-bottom:16px;color:#fff;animation:fadeUp .4s .3s ease both}
-.ph{display:flex;justify-content:space-between;margin-bottom:16px}
-.pen{font-family:'Playfair Display',serif;color:var(--gold);font-size:1rem}
-.pzh{font-family:'Noto Serif SC',serif;color:var(--gold-light);font-size:.85rem;opacity:.8}
-.mrow{margin-bottom:12px}
-.mlabels{display:flex;justify-content:space-between;font-size:.75rem;color:rgba(255,255,255,.6);margin-bottom:5px}
+textarea[readonly]{cursor:default}
+.tlabel{font-size:.73rem;color:var(--gold);margin-top:3px;font-style:italic;min-height:15px}
+.blackout-banner{background:#1a0a0a;border:2px solid var(--red);border-radius:10px;padding:14px 18px;margin-bottom:14px;display:none;text-align:center}
+.blackout-banner p{color:#ffaaaa;font-family:'Noto Serif SC',serif;font-size:.9rem}
+.blackout-banner span{display:block;font-size:.8rem;opacity:.7;margin-top:4px}
+.psec{background:var(--deep);border-radius:12px;padding:20px 18px;margin-bottom:14px;color:#fff}
+.ph{display:flex;justify-content:space-between;margin-bottom:14px}
+.pen{font-family:'Playfair Display',serif;color:var(--gold);font-size:.95rem}
+.pzh{font-family:'Noto Serif SC',serif;color:var(--gold-light);font-size:.82rem;opacity:.8}
+.mrow{margin-bottom:11px}
+.mlabels{display:flex;justify-content:space-between;font-size:.73rem;color:rgba(255,255,255,.6);margin-bottom:4px}
 .mlabels .zh{font-family:'Noto Serif SC',serif}
-.mbar{height:8px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
+.mbar{height:7px;background:rgba(255,255,255,.1);border-radius:10px;overflow:hidden}
 .mfill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--gold),var(--green));transition:width .6s ease;width:0%}
-.subtn{width:100%;padding:16px;background:var(--deep);color:var(--gold);border:2px solid var(--gold);border-radius:10px;font-family:'Playfair Display',serif;font-size:1rem;cursor:pointer;transition:all .25s;letter-spacing:1px;animation:fadeUp .4s .35s ease both;margin-bottom:16px}
-.subtn .zh{font-family:'Noto Serif SC',serif;font-size:.85rem;display:block;opacity:.75;margin-top:2px}
+.subtn{width:100%;padding:15px;background:var(--deep);color:var(--gold);border:2px solid var(--gold);border-radius:10px;font-family:'Playfair Display',serif;font-size:1rem;cursor:pointer;transition:all .25s;letter-spacing:1px;margin-bottom:8px}
+.subtn .zh{font-family:'Noto Serif SC',serif;font-size:.82rem;display:block;opacity:.75;margin-top:2px}
 .subtn:hover{background:var(--gold);color:var(--deep)}
 .subtn:disabled{opacity:.5;cursor:not-allowed}
-.status{text-align:center;font-size:.85rem;color:var(--mid);margin-bottom:16px;min-height:20px;font-family:'Noto Serif SC',serif}
-.hsec{margin-top:28px;animation:fadeUp .4s .4s ease both}
-.htitle{display:flex;justify-content:space-between;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid var(--gold-light)}
-.hten{font-family:'Playfair Display',serif;font-size:1rem;color:var(--deep)}
-.htzh{font-family:'Noto Serif SC',serif;font-size:.85rem;color:var(--mid)}
-.hentry{background:#fff;border-radius:10px;padding:14px 16px;margin-bottom:10px;box-shadow:0 1px 6px rgba(0,0,0,.05);border-left:3px solid var(--gold-light)}
-.hentry.good{border-left-color:var(--green)}.hentry.bad{border-left-color:var(--red)}
-.hdate{font-size:.75rem;color:var(--mid);margin-bottom:6px}
-.hrow{display:flex;justify-content:space-between;font-size:.85rem;gap:12px;flex-wrap:wrap}
-.hen2{color:var(--deep)}.hzh2{font-family:'Noto Serif SC',serif;color:var(--mid);text-align:right}
-.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--deep);color:var(--gold);padding:12px 28px;border-radius:30px;border:1px solid var(--gold);font-family:'Playfair Display',serif;font-size:.9rem;transition:transform .3s ease;z-index:100;text-align:center}
+.status{text-align:center;font-size:.82rem;color:var(--mid);margin-bottom:14px;min-height:18px}
+.hsec{margin-top:24px}
+.htitle{display:flex;justify-content:space-between;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--gold-light)}
+.hten{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--deep)}
+.htzh{font-family:'Noto Serif SC',serif;font-size:.82rem;color:var(--mid)}
+.hentry{background:#fff;border-radius:10px;padding:13px 15px;margin-bottom:9px;box-shadow:0 1px 6px rgba(0,0,0,.05);border-left:3px solid var(--gold-light)}
+.hentry.good{border-left-color:var(--green)}.hentry.bad{border-left-color:var(--red)}.hentry.blackout{border-left-color:#333;background:#f8f8f8}
+.hdate{font-size:.73rem;color:var(--mid);margin-bottom:5px}
+.hrow{display:flex;justify-content:space-between;font-size:.8rem;gap:8px;flex-wrap:wrap}
+.hen2{color:var(--deep)}.hzh2{font-family:'Noto Serif SC',serif;color:var(--mid)}
+.hnotes{font-size:.78rem;color:#555;margin-top:5px;padding-top:5px;border-top:1px solid #f0ebe0}
+.hnotes-zh{font-family:'Noto Serif SC',serif;font-size:.78rem;color:var(--blue);margin-top:3px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--deep);color:var(--gold);padding:11px 26px;border-radius:30px;border:1px solid var(--gold);font-family:'Playfair Display',serif;font-size:.88rem;transition:transform .3s ease;z-index:100;text-align:center}
 .toast.show{transform:translateX(-50%) translateY(0)}
-.chart-wrap{background:#fff;border-radius:12px;padding:20px;margin-bottom:16px;box-shadow:0 2px 12px rgba(0,0,0,.06);animation:fadeUp .4s .28s ease both}
-.chart-title{display:flex;justify-content:space-between;margin-bottom:14px}
-.cten{font-family:'Playfair Display',serif;font-size:1rem;color:var(--deep)}
-.ctzh{font-family:'Noto Serif SC',serif;font-size:.85rem;color:var(--mid)}
-@media(max-width:600px){.bilinput{grid-template-columns:1fr}.slabel{flex-direction:column}.lzh{text-align:left}}
+.chart-wrap{background:#fff;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.chart-title{display:flex;justify-content:space-between;margin-bottom:6px}
+.cten{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--deep)}
+.ctzh{font-family:'Noto Serif SC',serif;font-size:.82rem;color:var(--mid)}
+.legend{display:flex;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:.73rem;color:var(--mid)}
+.leg-dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+@media(max-width:600px){.slabel{flex-direction:column}.lzh{text-align:left}}
 </style>
 </head>
 <body>
@@ -79,46 +92,90 @@ textarea:focus{outline:none;border-color:var(--gold)}
 </header>
 <div class="container">
 
-  <div class="section">
+  <!-- BLACKOUT BANNER -->
+  <div class="blackout-banner" id="blackoutBanner">
+    <p>⚠ Total Blackout Day — No contact, no texting</p>
+    <span>完全断联 — 没有联系，没有短信</span>
+  </div>
+
+  <!-- 1. Did we see each other -->
+  <div class="section s1">
     <div class="slabel"><span class="len">Did we see each other today?</span><span class="lzh">我们今天见面了吗？</span></div>
     <div class="tgroup" id="g1">
-      <button class="tbtn" onclick="pick('g1',this,'y')">Yes<span class="zh">是的</span></button>
-      <button class="tbtn" onclick="pick('g1',this,'n')">No<span class="zh">没有</span></button>
+      <button class="tbtn" onclick="pick('g1',this,'y','ay')">Yes, quality time<span class="zh">是的，很好的时光</span></button>
+      <button class="tbtn" onclick="pick('g1',this,'q','am')">Quick visit / hug<span class="zh">短暂拜访/拥抱</span></button>
+      <button class="tbtn" onclick="pick('g1',this,'l','am')">Had lunch together<span class="zh">一起吃了午饭</span></button>
+      <button class="tbtn" onclick="pick('g1',this,'n','an')">No<span class="zh">没有</span></button>
     </div>
   </div>
 
-  <div class="section">
-    <div class="slabel"><span class="len">Weekend time together this week?</span><span class="lzh">这周有一起度过周末吗？</span></div>
+  <!-- 2. Did we text / communicate -->
+  <div class="section s2">
+    <div class="slabel"><span class="len">Did we communicate today? (text, call)</span><span class="lzh">今天有联系吗？（短信、电话）</span></div>
     <div class="tgroup" id="g2">
-      <button class="tbtn" onclick="pick('g2',this,'y')">Yes<span class="zh">有</span></button>
-      <button class="tbtn" onclick="pick('g2',this,'m')">Partial<span class="zh">部分时间</span></button>
-      <button class="tbtn" onclick="pick('g2',this,'n')">No<span class="zh">没有</span></button>
+      <button class="tbtn" onclick="pick('g2',this,'y','ay');checkBlackout()">Yes, good communication<span class="zh">是的，沟通很好</span></button>
+      <button class="tbtn" onclick="pick('g2',this,'m','am');checkBlackout()">A little<span class="zh">有一点</span></button>
+      <button class="tbtn" onclick="pick('g2',this,'n','an');checkBlackout()">No contact at all<span class="zh">完全没有联系</span></button>
     </div>
   </div>
 
-  <div class="section">
-    <div class="slabel"><span class="len">How was communication today?</span><span class="lzh">今天我们的沟通怎么样？</span></div>
+  <!-- 3. Did we feel close -->
+  <div class="section s3">
+    <div class="slabel"><span class="len">How did we feel today?</span><span class="lzh">今天我们感觉怎么样？</span></div>
     <div class="tgroup" id="g3">
-      <button class="tbtn" onclick="pick('g3',this,'y')">Good<span class="zh">很好</span></button>
-      <button class="tbtn" onclick="pick('g3',this,'m')">OK<span class="zh">还好</span></button>
-      <button class="tbtn" onclick="pick('g3',this,'n')">Difficult<span class="zh">有困难</span></button>
+      <button class="tbtn" onclick="pick('g3',this,'c','ay')">Close &amp; connected<span class="zh">亲密相连</span></button>
+      <button class="tbtn" onclick="pick('g3',this,'o','am')">OK, neutral<span class="zh">还好，平淡</span></button>
+      <button class="tbtn" onclick="pick('g3',this,'d','ab')">Distant<span class="zh">有些疏远</span></button>
+      <button class="tbtn" onclick="pick('g3',this,'h','an')">Hurt feelings<span class="zh">有些伤心</span></button>
+      <button class="tbtn" onclick="pick('g3',this,'u','an')">Someone is upset<span class="zh">有人不开心</span></button>
+      <button class="tbtn" onclick="pick('g3',this,'b','ak')">Both angry / mad<span class="zh">都在生气</span></button>
     </div>
   </div>
 
-  <div class="section">
-    <div class="slabel"><span class="len">Any issues? Were they resolved?</span><span class="lzh">今天有什么问题吗？解决了吗？</span></div>
-    <div class="tgroup" id="g4" style="margin-bottom:14px">
-      <button class="tbtn" onclick="pick('g4',this,'y')">No issues<span class="zh">没有问题</span></button>
-      <button class="tbtn" onclick="pick('g4',this,'m')">Resolved<span class="zh">已解决</span></button>
-      <button class="tbtn" onclick="pick('g4',this,'n')">Unresolved<span class="zh">未解决</span></button>
-    </div>
-    <div class="bilinput">
-      <div class="iblock"><label>Notes <span class="zh">备注</span></label><textarea id="nen" placeholder="Any issues or observations..."></textarea></div>
-      <div class="iblock"><label><span class="zh">备注（中文）</span></label><textarea id="nzh" class="zhi" placeholder="描述任何问题或观察..."></textarea></div>
+  <!-- 4. Weekend -->
+  <div class="section s4">
+    <div class="slabel"><span class="len">Weekend time together this week?</span><span class="lzh">这周有一起度过周末吗？</span></div>
+    <div class="tgroup" id="g4">
+      <button class="tbtn" onclick="pick('g4',this,'y','ay')">Yes<span class="zh">有</span></button>
+      <button class="tbtn" onclick="pick('g4',this,'m','am')">Partial<span class="zh">部分时间</span></button>
+      <button class="tbtn" onclick="pick('g4',this,'n','an')">No<span class="zh">没有</span></button>
     </div>
   </div>
 
-  <div class="section">
+  <!-- 5. Issues -->
+  <div class="section s5">
+    <div class="slabel"><span class="len">Any issues today?</span><span class="lzh">今天有什么问题吗？</span></div>
+    <div class="tgroup" id="g5">
+      <button class="tbtn" onclick="pick('g5',this,'n','ay')">No issues, all good<span class="zh">没有问题，很好</span></button>
+      <button class="tbtn" onclick="pick('g5',this,'s','am')">Small tension, moved on<span class="zh">有小摩擦，过去了</span></button>
+      <button class="tbtn" onclick="pick('g5',this,'a','an')">Argument, unresolved<span class="zh">有争吵，未解决</span></button>
+      <button class="tbtn" onclick="pick('g5',this,'t','ak')">Silent treatment<span class="zh">冷战中</span></button>
+    </div>
+  </div>
+
+  <!-- 6. Notes with auto-translate both ways -->
+  <div class="section s6">
+    <div class="slabel"><span class="len">Notes</span><span class="lzh">备注</span></div>
+    <div class="notes-wrap">
+      <div class="iblock">
+        <label>Your notes in English → auto-translates to Chinese for her</label>
+        <textarea id="nen" class="eng" placeholder="Write anything here... translates automatically for her." oninput="autoTranslate('nen','nzh','en','zh-CN','tlen')"></textarea>
+        <div class="tlabel" id="tlen"></div>
+      </div>
+      <div class="iblock">
+        <label><span class="zh">她用中文写备注 → 自动翻译成英文给你看</span></label>
+        <textarea id="nzh" class="zhi" placeholder="她可以在这里写中文... 会自动翻译给你。" oninput="autoTranslate('nzh','nen_out','zh-CN','en','tlzh')"></textarea>
+        <div class="tlabel" id="tlzh"></div>
+        <div class="iblock" style="margin-top:8px">
+          <label>Her notes translated to English for you</label>
+          <textarea id="nen_out" class="eng" readonly placeholder="Her Chinese notes will appear here in English..."></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Happiness -->
+  <div class="section s7">
     <div class="slabel"><span class="len">Overall happiness today</span><span class="lzh">今天整体幸福感评分</span></div>
     <div class="star-row">
       <span class="star" onclick="setStars(1)">★</span>
@@ -130,17 +187,25 @@ textarea:focus{outline:none;border-color:var(--gold)}
     </div>
   </div>
 
+  <!-- Snapshot -->
   <div class="psec">
     <div class="ph"><span class="pen">Today's Snapshot</span><span class="pzh">今日快照</span></div>
-    <div class="mrow"><div class="mlabels"><span>Time Together <span class="zh">在一起的时间</span></span><span id="p1">0%</span></div><div class="mbar"><div class="mfill" id="m1"></div></div></div>
-    <div class="mrow"><div class="mlabels"><span>Communication <span class="zh">沟通质量</span></span><span id="p2">0%</span></div><div class="mbar"><div class="mfill" id="m2"></div></div></div>
+    <div class="mrow"><div class="mlabels"><span>Connection <span class="zh">联系</span></span><span id="p1">0%</span></div><div class="mbar"><div class="mfill" id="m1"></div></div></div>
+    <div class="mrow"><div class="mlabels"><span>Closeness <span class="zh">亲密感</span></span><span id="p2">0%</span></div><div class="mbar"><div class="mfill" id="m2"></div></div></div>
     <div class="mrow"><div class="mlabels"><span>Happiness <span class="zh">幸福感</span></span><span id="p3">0%</span></div><div class="mbar"><div class="mfill" id="m3"></div></div></div>
   </div>
 
+  <!-- Trend chart -->
   <div class="chart-wrap">
     <div class="chart-title"><span class="cten">Progress Over Time</span><span class="ctzh">长期趋势</span></div>
-    <canvas id="trendChart" height="120"></canvas>
-    <p id="nodata" style="text-align:center;color:var(--mid);font-size:.85rem;padding:20px 0">No data yet — start checking in daily.<br><span style="font-family:'Noto Serif SC',serif">还没有数据，开始每日记录吧。</span></p>
+    <div class="legend">
+      <div class="leg-item"><span class="leg-dot" style="background:var(--gold)"></span>Happiness 幸福</div>
+      <div class="leg-item"><span class="leg-dot" style="background:var(--green)"></span>Closeness 亲密</div>
+      <div class="leg-item"><span class="leg-dot" style="background:var(--blue)"></span>Saw each other 见面</div>
+      <div class="leg-item"><span class="leg-dot" style="background:var(--red)"></span>Blackout 断联</div>
+    </div>
+    <canvas id="trendChart" height="110"></canvas>
+    <p id="nodata" style="text-align:center;color:var(--mid);font-size:.82rem;padding:16px 0">No data yet — start checking in daily.<br><span style="font-family:'Noto Serif SC',serif">还没有数据，开始每日记录吧。</span></p>
   </div>
 
   <button class="subtn" id="savebtn" onclick="save()">
@@ -148,6 +213,10 @@ textarea:focus{outline:none;border-color:var(--gold)}
     <span class="zh">保存今天的记录</span>
   </button>
   <div class="status" id="status"></div>
+  <button class="subtn" id="sendbtn" onclick="sendToHer()" style="background:transparent;color:var(--green);border-color:var(--green);margin-top:4px">
+    📱 Send to Her via iMessage
+    <span class="zh" style="color:var(--green)">发送给她 via iMessage</span>
+  </button>
 
   <div class="hsec">
     <div class="htitle"><span class="hten">Recent History</span><span class="htzh">最近记录</span></div>
@@ -155,31 +224,66 @@ textarea:focus{outline:none;border-color:var(--gold)}
   </div>
 
 </div>
-<div class="toast" id="toast">Saved ✓<br><span style="font-family:'Noto Serif SC',serif;font-size:.8rem">已保存</span></div>
+<div class="toast" id="toast">Saved ✓<br><span style="font-family:'Noto Serif SC',serif;font-size:.78rem">已保存</span></div>
 
 <script>
-const SHEET_URL = "https://script.google.com/macros/s/AKfycbwicMovjkENsyYs-G8oBy4hJV-OeC4z79Z8tcNnaGKKEUYGmnkm1_78UXs6znyQIDlgdw/exec";
-const S={g1:null,g2:null,g3:null,g4:null,stars:0};
+const SHEET_URL="https://script.google.com/macros/s/AKfycbwicMovjkENsyYs-G8oBy4hJV-OeC4z79Z8tcNnaGKKEUYGmnkm1_78UXs6znyQIDlgdw/exec";
+const S={g1:null,g2:null,g3:null,g4:null,g5:null,stars:0};
 const slabs=['','Poor 很差','Fair 一般','OK 还好','Good 很好','Great 很棒'];
+const tTimers={};
+
 document.getElementById('dateBadge').textContent=new Date().toLocaleDateString('en-US',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
 
-function pick(gid,btn,v){
+function pick(gid,btn,v,cls){
   document.querySelectorAll('#'+gid+' .tbtn').forEach(b=>{b.className='tbtn'});
-  btn.classList.add(v==='y'?'ay':v==='n'?'an':'am');
-  S[gid]=v;updateMeters();
+  btn.classList.add(cls);
+  S[gid]=v;
+  updateMeters();
 }
+
+function checkBlackout(){
+  const isBlackout=S.g1==='n'&&S.g2==='n';
+  document.getElementById('blackoutBanner').style.display=isBlackout?'block':'none';
+}
+
 function setStars(n){
   S.stars=n;
   document.querySelectorAll('.star').forEach((s,i)=>s.classList.toggle('lit',i<n));
   document.getElementById('slb').innerHTML=slabs[n]+'<span class="zh">'+['','1星','2星','3星','4星','5星'][n]+'</span>';
   updateMeters();
 }
-function setM(id,pid,v){document.getElementById(id).style.width=v+'%';document.getElementById(pid).textContent=v+'%';}
+
+function setM(id,pid,v){
+  document.getElementById(id).style.width=v+'%';
+  document.getElementById(pid).textContent=v+'%';
+}
+
 function updateMeters(){
-  const t=(S.g1==='y'?50:0)+(S.g2==='y'?50:S.g2==='m'?25:0);
-  const c=S.g3==='y'?100:S.g3==='m'?55:S.g3==='n'?15:0;
-  const h=S.stars*20;
-  setM('m1','p1',t);setM('m2','p2',c);setM('m3','p3',h);
+  const conn=(S.g1==='y'?100:S.g1==='q'||S.g1==='l'?60:S.g2==='y'?40:S.g2==='m'?20:0);
+  const close=(S.g3==='c'?100:S.g3==='o'?60:S.g3==='d'?30:S.g3==='h'||S.g3==='u'?15:S.g3==='b'?5:0);
+  const happy=S.stars*20;
+  setM('m1','p1',conn);setM('m2','p2',close);setM('m3','p3',happy);
+}
+
+function autoTranslate(srcId,dstId,srcLang,tgtLang,lblId){
+  clearTimeout(tTimers[srcId]);
+  const text=document.getElementById(srcId).value.trim();
+  const lbl=document.getElementById(lblId);
+  const out=document.getElementById(dstId);
+  if(!text){if(out)out.value='';lbl.textContent='';return;}
+  lbl.textContent='✦ Translating... 翻译中...';
+  tTimers[srcId]=setTimeout(async()=>{
+    try{
+      const url=`https://translate.googleapis.com/translate_a/single?client=gtx&sl=${srcLang}&tl=${tgtLang}&dt=t&q=${encodeURIComponent(text)}`;
+      const r=await fetch(url);
+      const d=await r.json();
+      const translated=d[0].map(x=>x[0]).join('');
+      if(out){out.value=translated;}
+      lbl.textContent='✦ Translated ✓';
+    }catch(e){
+      lbl.textContent='Auto-translate unavailable';
+    }
+  },900);
 }
 
 async function save(){
@@ -187,40 +291,67 @@ async function save(){
   const status=document.getElementById('status');
   btn.disabled=true;
   status.textContent='Saving... 保存中...';
+  const isBlackout=S.g1==='n'&&S.g2==='n';
   const entry={
     date:new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}),
     ts:Date.now(),
-    saw:S.g1,wknd:S.g2,comm:S.g3,issues:S.g4,stars:S.stars,
+    saw:S.g1,comm:S.g2,feeling:S.g3,wknd:S.g4,issues:S.g5,stars:S.stars,
+    blackout:isBlackout,
     notesEn:document.getElementById('nen').value,
     notesZh:document.getElementById('nzh').value
   };
-  // Save locally
   const h=JSON.parse(localStorage.getItem('ci')||'[]');
   h.unshift(entry);
-  localStorage.setItem('ci',JSON.stringify(h.slice(0,60)));
-  // Save to Google Sheets
+  localStorage.setItem('ci',JSON.stringify(h.slice(0,90)));
   try{
     await fetch(SHEET_URL,{method:'POST',body:JSON.stringify(entry),headers:{'Content-Type':'text/plain'}});
-    status.textContent='✓ Saved to Google Sheets  已保存到表格';
-  } catch(e){
-    status.textContent='Saved locally (offline)  已本地保存';
+    status.textContent='✓ Saved to Google Sheets 已保存';
+  }catch(e){
+    status.textContent='Saved locally 已本地保存';
   }
   renderHistory();drawChart();
   btn.disabled=false;
   const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);
 }
 
+function sendToHer(){
+  const feelMap={c:'亲密相连',o:'还好',d:'有些疏远',h:'有些伤心',u:'有人不开心',b:'都在生气'};
+  const issueMap={n:'没有问题',s:'小摩擦已过去',a:'有争吵未解决',t:'冷战中'};
+  const sawMap={y:'见面了，时光很好',q:'短暂拜访',l:'一起吃了午饭',n:'没有见面'};
+  const feeling=feelMap[S.g3]||'—';
+  const issues=issueMap[S.g5]||'—';
+  const saw=sawMap[S.g1]||'—';
+  const stars='★'.repeat(S.stars||0)+'☆'.repeat(5-(S.stars||0));
+  const notesZh=document.getElementById('nzh').value;
+  const blackout=S.g1==='n'&&S.g2==='n'?'\n⚠ 今天完全断联':'';
+  const msg=`【每日沟通记录】${new Date().toLocaleDateString('zh-CN')}\n见面：${saw}\n感觉：${feeling}\n问题：${issues}\n幸福感：${stars}${blackout}${notesZh?'\n备注：'+notesZh:''}\n\n查看我们的记录：https://hippsterai.github.io/our-checkin`;
+  window.location.href=`sms:&body=${encodeURIComponent(msg)}`;
+}
+
+const sawLabels={y:'Quality time',q:'Quick visit',l:'Had lunch',n:'No'};
+const sawZh={y:'好的时光',q:'短暂拜访',l:'一起午饭',n:'没见'};
+const feelLabels={c:'Close',o:'OK',d:'Distant',h:'Hurt',u:'Upset',b:'Both angry'};
+const feelZh={c:'亲密',o:'还好',d:'疏远',h:'伤心',u:'不开心',b:'都在生气'};
+const issueLabels={n:'No issues',s:'Small tension',a:'Argument',t:'Silent treatment'};
+const issueZh={n:'没问题',s:'小摩擦',a:'有争吵',t:'冷战'};
+
 function renderHistory(){
   const h=JSON.parse(localStorage.getItem('ci')||'[]');
   const l=document.getElementById('hlist');
-  if(!h.length){l.innerHTML='<p style="color:var(--mid);font-size:.85rem">No entries yet. 还没有记录。</p>';return;}
-  l.innerHTML=h.slice(0,10).map(e=>{
-    const q=e.stars>=4?'good':e.stars<=2?'bad':'';
-    const stars='★'.repeat(e.stars)+'☆'.repeat(5-e.stars);
-    const sawEn=e.saw==='y'?'Yes':'No';const sawZh=e.saw==='y'?'见了':'没见';
-    const wkEn=e.wknd==='y'?'Yes':e.wknd==='m'?'Partial':'No';const wkZh=e.wknd==='y'?'有':e.wknd==='m'?'部分':'无';
-    const cmEn=e.comm==='y'?'Good':e.comm==='m'?'OK':'Hard';const cmZh=e.comm==='y'?'好':e.comm==='m'?'一般':'难';
-    return`<div class="hentry ${q}"><div class="hdate">${e.date}</div><div class="hrow"><div class="hen2">Saw: ${sawEn} | Weekend: ${wkEn} | Comm: ${cmEn} | ${stars}</div><div class="hzh2">见面:${sawZh} | 周末:${wkZh} | 沟通:${cmZh}</div></div>${e.notesEn?`<div style="font-size:.8rem;color:var(--mid);margin-top:6px">${e.notesEn}</div>`:''}</div>`;
+  if(!h.length){l.innerHTML='<p style="color:var(--mid);font-size:.82rem;padding:10px 0">No entries yet. 还没有记录。</p>';return;}
+  l.innerHTML=h.slice(0,14).map(e=>{
+    const cls=e.blackout?'blackout':e.stars>=4?'good':e.stars<=2?'bad':'';
+    const stars='★'.repeat(e.stars||0)+'☆'.repeat(5-(e.stars||0));
+    const bo=e.blackout?'<span style="color:var(--red);font-weight:600"> ⚠ BLACKOUT 断联</span>':'';
+    return`<div class="hentry ${cls}">
+      <div class="hdate">${e.date}${bo}</div>
+      <div class="hrow">
+        <div class="hen2">Saw: ${sawLabels[e.saw]||'—'} | Felt: ${feelLabels[e.feeling]||'—'} | Issues: ${issueLabels[e.issues]||'—'} | ${stars}</div>
+        <div class="hzh2">见面:${sawZh[e.saw]||'—'} | 感觉:${feelZh[e.feeling]||'—'} | ${issueZh[e.issues]||'—'}</div>
+      </div>
+      ${e.notesEn?`<div class="hnotes">📝 ${e.notesEn}</div>`:''}
+      ${e.notesZh?`<div class="hnotes-zh">📝 ${e.notesZh}</div>`:''}
+    </div>`;
   }).join('');
 }
 
@@ -230,19 +361,49 @@ function drawChart(){
   const nd=document.getElementById('nodata');
   if(h.length<2){nd.style.display='block';el.style.display='none';return;}
   nd.style.display='none';el.style.display='block';
-  const data=h.slice(0,14).reverse();
-  const W=el.offsetWidth||800,H=120;
+  const data=h.slice(0,21).reverse();
+  const W=el.offsetWidth||800,H=110;
   el.width=W;el.height=H;
   const ctx=el.getContext('2d');
   ctx.clearRect(0,0,W,H);
-  const pad=30,gw=W-pad*2,gh=H-20;
-  const pts=data.map((e,i)=>({x:pad+i*(gw/(data.length-1||1)),happy:e.stars*20,comm:e.comm==='y'?100:e.comm==='m'?55:15,saw:e.saw==='y'?100:0}));
-  function line(key,color){ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineJoin='round';pts.forEach((p,i)=>{const y=H-10-(p[key]/100)*gh;i===0?ctx.moveTo(p.x,y):ctx.lineTo(p.x,y);});ctx.stroke();pts.forEach(p=>{const y=H-10-(p[key]/100)*gh;ctx.beginPath();ctx.arc(p.x,y,3,0,Math.PI*2);ctx.fillStyle=color;ctx.fill();});}
-  line('happy','#C9A84C');line('comm','#4CAF82');line('saw','#7BA7D4');
-  ctx.font='10px sans-serif';ctx.fillStyle='#888';
-  data.forEach((e,i)=>{const x=pad+i*(gw/(data.length-1||1));ctx.fillText(e.date.split(',')[0],x-12,H);});
-  const leg=[['Happiness 幸福','#C9A84C'],['Comm 沟通','#4CAF82'],['Saw 见面','#7BA7D4']];
-  leg.forEach((l,i)=>{ctx.fillStyle=l[1];ctx.fillRect(pad+i*110,4,12,8);ctx.fillStyle='#888';ctx.fillText(l[0],pad+i*110+16,12);});
+  const pad=8,gw=W-pad*2,gh=H-18;
+  const n=data.length;
+  const pts=data.map((e,i)=>({
+    x:pad+i*(gw/(n-1||1)),
+    happy:(e.stars||0)*20,
+    close:(e.feeling==='c'?100:e.feeling==='o'?60:e.feeling==='d'?30:e.feeling==='h'||e.feeling==='u'?15:5),
+    saw:(e.saw==='y'?100:e.saw==='q'||e.saw==='l'?60:0),
+    blackout:e.blackout?1:0
+  }));
+  function line(key,color,dashed){
+    ctx.beginPath();ctx.strokeStyle=color;ctx.lineWidth=2;ctx.lineJoin='round';
+    if(dashed)ctx.setLineDash([4,3]);else ctx.setLineDash([]);
+    pts.forEach((p,i)=>{const y=H-14-(p[key]/100)*gh;i===0?ctx.moveTo(p.x,y):ctx.lineTo(p.x,y);});
+    ctx.stroke();ctx.setLineDash([]);
+    pts.forEach(p=>{
+      if(key==='blackout'&&!p[key])return;
+      const y=H-14-(p[key]/100)*gh;
+      ctx.beginPath();ctx.arc(p.x,y,3,0,Math.PI*2);
+      ctx.fillStyle=p.blackout&&key!=='blackout'?'rgba(200,0,0,0.3)':color;
+      ctx.fill();
+    });
+  }
+  // Mark blackout days with red vertical lines
+  pts.forEach(p=>{
+    if(p.blackout){
+      ctx.beginPath();ctx.strokeStyle='rgba(224,112,112,0.3)';ctx.lineWidth=12;
+      ctx.moveTo(p.x,0);ctx.lineTo(p.x,H-14);ctx.stroke();
+    }
+  });
+  line('happy','#C9A84C');
+  line('close','#4CAF82');
+  line('saw','#7BA7D4');
+  ctx.font='9px sans-serif';ctx.fillStyle='#aaa';
+  data.forEach((e,i)=>{
+    const x=pad+i*(gw/(n-1||1));
+    const label=e.date?e.date.split(',')[0]:'';
+    ctx.fillText(label,x-10,H);
+  });
 }
 renderHistory();drawChart();
 </script>
